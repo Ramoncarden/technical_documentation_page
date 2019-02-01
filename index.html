@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Technical Documentation Page</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+	<nav id="navbar">
+		<header id="nav-header"><h1>Python Documentation</h1></header>
+		<a class="nav-link" href="#introduction">Introduction</a>
+		<a class="nav-link" href="#whetting_your_appetite">Whetting Your Appetite</a>
+		<a class="nav-link" href="#using_the_python_interpreter">Using The Python Interpreter</a>
+		<a class="nav-link" href="#numbers">Numbers</a>
+		<a class="nav-link" href="#strings">Strings</a>
+		<a class="nav-link" href="#lists">Lists</a>
+		<a class="nav-link" href="#if_statements">if Statements</a>
+		<a class="nav-link" href="#for_statements">for Statements</a>
+		<a class="nav-link" href="#defining_functions">Defining Functions</a>
+		<a class="nav-link" href="#intermezzo:_coding_style">Intermezzo: Coding Style</a>
+		<a id="ref-link" class="nav-link" href="#reference">Reference</a>
+	</nav>
+
+	<main id="main-doc">
+		<section id="introduction" class="main-section">
+			<header><h1>Introduction</h1></header>
+				<p>Python is an easy to learn, powerful programming language. It has efficient high-level data structures and a simple but effective approach to object-oriented programming. Python’s elegant syntax and dynamic typing, together with its interpreted nature, make it an ideal language for scripting and rapid application development in many areas on most platforms.</p>
+
+				<p>The Python interpreter and the extensive standard library are freely available in source or binary form for all major platforms from the Python Web site, https://www.python.org/, and may be freely distributed. The same site also contains distributions of and pointers to many free third party Python modules, programs and tools, and additional documentation.</p>
+
+				<p>The Python interpreter is easily extended with new functions and data types implemented in C or C++ (or other languages callable from C). Python is also suitable as an extension language for customizable applications.</p>
+
+				<p>This tutorial introduces the reader informally to the basic concepts and features of the Python language and system. It helps to have a Python interpreter handy for hands-on experience, but all examples are self-contained, so the tutorial can be read off-line as well.</p>
+
+				<p>For a description of standard objects and modules, see The Python Standard Library. The Python Language Reference gives a more formal definition of the language. To write extensions in C or C++, read Extending and Embedding the Python Interpreter and Python/C API Reference Manual. There are also several books covering Python in depth.</p>
+
+				<p>This tutorial does not attempt to be comprehensive and cover every single feature, or even every commonly used feature. Instead, it introduces many of Python’s most noteworthy features, and will give you a good idea of the language’s flavor and style. After reading it, you will be able to read and write Python modules and programs, and you will be ready to learn more about the various Python library modules described in The Python Standard Library.</p>
+		</section>
+		<section id="whetting_your_appetite" class="main-section">
+			<header><h1>Whetting Your Appetite</h1></header>
+				<p>If you do much work on computers, eventually you find that there’s some task you’d like to automate. For example, you may wish to perform a search-and-replace over a large number of text files, or rename and rearrange a bunch of photo files in a complicated way. Perhaps you’d like to write a small custom database, or a specialized GUI application, or a simple game.</p>
+
+				<p>If you’re a professional software developer, you may have to work with several C/C++/Java libraries but find the usual write/compile/test/re-compile cycle is too slow. Perhaps you’re writing a test suite for such a library and find writing the testing code a tedious task. Or maybe you’ve written a program that could use an extension language, and you don’t want to design and implement a whole new language for your application.
+
+				Python is just the language for you.</p>
+
+				<p>You could write a Unix shell script or Windows batch files for some of these tasks, but shell scripts are best at moving around files and changing text data, not well-suited for GUI applications or games. You could write a C/C++/Java program, but it can take a lot of development time to get even a first-draft program. Python is simpler to use, available on Windows, Mac OS X, and Unix operating systems, and will help you get the job done more quickly.</p>
+
+				<p>Python is simple to use, but it is a real programming language, offering much more structure and support for large programs than shell scripts or batch files can offer. On the other hand, Python also offers much more error checking than C, and, being a very-high-level language, it has high-level data types built in, such as flexible arrays and dictionaries. Because of its more general data types Python is applicable to a much larger problem domain than Awk or even Perl, yet many things are at least as easy in Python as in those languages.</p>
+
+				<p>Python allows you to split your program into modules that can be reused in other Python programs. It comes with a large collection of standard modules that you can use as the basis of your programs — or as examples to start learning to program in Python. Some of these modules provide things like file I/O, system calls, sockets, and even interfaces to graphical user interface toolkits like Tk.</p>
+
+				<p>Python is an interpreted language, which can save you considerable time during program development because no compilation and linking is necessary. The interpreter can be used interactively, which makes it easy to experiment with features of the language, to write throw-away programs, or to test functions during bottom-up program development. It is also a handy desk calculator.</p>
+
+				<p>Python enables programs to be written compactly and readably. Programs written in Python are typically much shorter than equivalent C, C++, or Java programs, for several reasons:</p>
+				<ul>
+					<li>the high-level data types allow you to express complex operations in a single statement;</li>
+					<li>statement grouping is done by indentation instead of beginning and ending brackets;
+					</li>
+					<li>no variable or argument declarations are necessary.
+					</li>
+				</ul>
+					
+				<p>Python is extensible: if you know how to program in C it is easy to add a new built-in function or module to the interpreter, either to perform critical operations at maximum speed, or to link Python programs to libraries that may only be available in binary form (such as a vendor-specific graphics library). Once you are really hooked, you can link the Python interpreter into an application written in C and use it as an extension or command language for that application.</p>
+
+				<p>By the way, the language is named after the BBC show “Monty Python’s Flying Circus” and has nothing to do with reptiles. Making references to Monty Python skits in documentation is not only allowed, it is encouraged!</p>
+
+				<p>Now that you are all excited about Python, you’ll want to examine it in some more detail. Since the best way to learn a language is to use it, the tutorial invites you to play with the Python interpreter as you read.</p>
+
+				<p>In the next chapter, the mechanics of using the interpreter are explained. This is rather mundane information, but essential for trying out the examples shown later.</p>
+
+				<p>The rest of the tutorial introduces various features of the Python language and system through examples, beginning with simple expressions, statements and data types, through functions and modules, and finally touching upon advanced concepts like exceptions and user-defined classes</p>
+		</section>
+		<section id="using_the_python_interpreter" class="main-section">
+			<header><h1>Using The Python Interpreter</h1></header>
+			<p>
+				The Python interpreter is usually installed as /usr/local/bin/python3.7 on those machines where it is available; putting /usr/local/bin in your Unix shell’s search path makes it possible to start it by typing the command:</p>
+
+				<p>python3.7
+				to the shell. [1] Since the choice of the directory where the interpreter lives is an installation option, other places are possible; check with your local Python guru or system administrator. (E.g., /usr/local/python is a popular alternative location.)</p>
+
+				<p>On Windows machines, the Python installation is usually placed in C:\Python37, though you can change this when you’re running the installer. To add this directory to your path, you can type the following command into the command prompt in a DOS box:
+
+				set path=%path%;C:\python37</p>
+		</section>
+		<section id="numbers" class="main-section">
+			<header><h1>Numbers</h1></header>
+      <p>
+      	The interpreter acts as a simple calculator: you can type an expression at it and it will write the value. Expression syntax is straightforward: the operators +, -, * and / work just like in most other languages (for example, Pascal or C); parentheses (()) can be used for grouping. For example:
+      </p>
+      <pre>
+        <code>
+					<p class="code-text">>>> 2 + 2
+4
+>>> 50 - 5*6
+20
+>>> (50 - 5*6) / 4
+5.0
+>>> 8 / 5  # division always returns a floating point number
+1.6</p>
+        </code>
+      </pre>
+      <p>
+      	The integer numbers (e.g. 2, 4, 20) have type int, the ones with a fractional part (e.g. 5.0, 1.6) have type float. We will see more about numeric types later in the tutorial.
+      </p>
+		</section>
+		<section id="strings" class="main-section">
+			<header><h1>Strings</h1></header>
+			<p>
+				Besides numbers, Python can also manipulate strings, which can be expressed in several ways. They can be enclosed in single quotes ('...') or double quotes ("...") with the same result [2]. \ can be used to escape quotes:
+			</p>
+			<pre>
+        <code>
+					<p class="code-text">>>> 'spam eggs'  # single quotes
+'spam eggs'
+>>> 'doesn\'t'  # use \' to escape the single quote...
+"doesn't"
+>>> "doesn't"  # ...or use double quotes instead
+"doesn't"
+>>> '"Yes," they said.'
+'"Yes," they said.'
+>>> "\"Yes,\" they said."
+'"Yes," they said.'
+>>> '"Isn\'t," they said.'
+'"Isn\'t," they said.'</p>
+        </code>
+			</pre>
+      <p>
+      	In the interactive interpreter, the output string is enclosed in quotes and special characters are escaped with backslashes. While this might sometimes look different from the input (the enclosing quotes could change), the two strings are equivalent. The string is enclosed in double quotes if the string contains a single quote and no double quotes, otherwise it is enclosed in single quotes. The print() function produces a more readable output, by omitting the enclosing quotes and by printing escaped and special characters:
+      </p>
+      <pre>
+        <code>
+					<p class="code-text">>>> '"Isn\'t," they said.'
+'"Isn\'t," they said.'
+>>> print('"Isn\'t," they said.')
+"Isn't," they said.
+>>> s = 'First line.\nSecond line.'  # \n means newline
+>>> s  # without print(), \n is included in the output
+'First line.\nSecond line.'
+>>> print(s)  # with print(), \n produces a new line
+First line.
+Second line.</p>
+        </code>
+      </pre>
+		</section>
+		<section id="lists" class="main-section">
+			<header><h1>Lists</h1></header>
+			<p>
+				Python knows a number of compound data types, used to group together other values. The most versatile is the list, which can be written as a list of comma-separated values (items) between square brackets. Lists might contain items of different types, but usually the items all have the same type.
+			</p>
+			<pre>
+				<code>
+					<p class="code-text">>>> squares = [1,4,9,16,25]
+>>> squares
+[1,4,9,16,25]</p>
+				</code>
+			</pre>
+		</section>
+		<section id="if_statements" class="main-section">
+			<header><h1>if Statements</h1></header>
+      <p>
+      	Perhaps the most well-known statement type is the if statement. For example:
+      </p>
+      <pre>
+      	<code>
+					<p class="code-text">>>> x = int(input("Please enter an integer: "))
+Please enter an integer: 42
+>>> if x < 0:
+...     x = 0
+...     print('Negative changed to zero')
+... elif x == 0:
+...     print('Zero')
+... elif x == 1:
+...     print('Single')
+... else:
+...     print('More')
+...
+More</p>
+      	</code>
+      </pre>
+      <p>
+      	There can be zero or more elif parts, and the else part is optional. The keyword ‘elif’ is short for ‘else if’, and is useful to avoid excessive indentation. An if … elif … elif … sequence is a substitute for the switch or case statements found in other languages.
+      </p>
+		</section>
+		<section id="for_statements" class="main-section">
+			<header><h1>for Statements</h1></header>
+      <p>
+      	The for statement in Python differs a bit from what you may be used to in C or Pascal. Rather than always iterating over an arithmetic progression of numbers (like in Pascal), or giving the user the ability to define both the iteration step and halting condition (as C), Python’s for statement iterates over the items of any sequence (a list or a string), in the order that they appear in the sequence. For example (no pun intended):
+      </p>
+      <pre>
+      	<code>
+					<p class="code-text">>>> # Measure some strings:
+... words = ['cat', 'window', 'defenestrate']
+>>> for w in words:
+...     print(w, len(w))
+...
+cat 3
+window 6
+defenestrate 12</p>
+      	</code>
+      </pre>
+      <p>
+      	If you need to modify the sequence you are iterating over while inside the loop (for example to duplicate selected items), it is recommended that you first make a copy. Iterating over a sequence does not implicitly make a copy. The slice notation makes this especially convenient:
+      </p>
+      <pre>
+      	<code>
+					<p class="code-text">>>> for w in words[:]:  # Loop over a slice copy of the entire list.
+...     if len(w) > 6:
+...         words.insert(0, w)
+...
+>>> words
+['defenestrate', 'cat', 'window', 'defenestrate']</p>
+      	</code>
+      </pre>
+      <p>
+      	With for w in words:, the example would attempt to create an infinite list, inserting defenestrate over and over again.
+      </p>
+		</section>
+		<section id="defining_functions" class="main-section">
+			<header><h1>Defining Functions</h1></header>
+			<p>
+				We can create a function that writes the Fibonacci series to an arbitrary boundary:
+			</p>
+			<pre>
+				<code>
+					<p class="code-text">>>> def fib(n):    # write Fibonacci series up to n
+...     """Print a Fibonacci series up to n."""
+...     a, b = 0, 1
+...     while a < n:
+...         print(a, end=' ')
+...         a, b = b, a+b
+...     print()
+...
+>>> # Now call the function we just defined:
+... fib(2000)
+0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597</p>
+				</code>
+			</pre>
+			<p>
+				The keyword def introduces a function definition. It must be followed by the function name and the parenthesized list of formal parameters. The statements that form the body of the function start at the next line, and must be indented.</p>
+
+				<p>The first statement of the function body can optionally be a string literal; this string literal is the function’s documentation string, or docstring. (More about docstrings can be found in the section Documentation Strings.) There are tools which use docstrings to automatically produce online or printed documentation, or to let the user interactively browse through code; it’s good practice to include docstrings in code that you write, so make a habit of it.</p>
+
+				<p>The execution of a function introduces a new symbol table used for the local variables of the function. More precisely, all variable assignments in a function store the value in the local symbol table; whereas variable references first look in the local symbol table, then in the local symbol tables of enclosing functions, then in the global symbol table, and finally in the table of built-in names. Thus, global variables cannot be directly assigned a value within a function (unless named in a global statement), although they may be referenced.</p>
+
+				<p>The actual parameters (arguments) to a function call are introduced in the local symbol table of the called function when it is called; thus, arguments are passed using call by value (where the value is always an object reference, not the value of the object). [1] When a function calls another function, a new local symbol table is created for that call.</p>
+
+				<p>A function definition introduces the function name in the current symbol table. The value of the function name has a type that is recognized by the interpreter as a user-defined function. This value can be assigned to another name which can then also be used as a function. This serves as a general renaming mechanism:</p>
+			<pre>
+				<code>
+					<p class="code-text">>>> fib
+&ltfunction fib at 10042ed0&gt
+>>> f = fib
+>>> f(100)
+0 1 1 2 3 5 8 13 21 34 55 89</p>
+				</code>
+			</pre>
+			<p>
+				Coming from other languages, you might object that fib is not a function but a procedure since it doesn’t return a value. In fact, even functions without a return statement do return a value, albeit a rather boring one. This value is called None (it’s a built-in name). Writing the value None is normally suppressed by the interpreter if it would be the only value written. You can see it if you really want to using print():
+			</p>
+			<pre>
+				<code>
+					<p class="code-text">>>> fib(0)
+>>> print(fib(0))
+None</p>
+				</code>
+			</pre>
+			<p>
+				It is simple to write a function that returns a list of the numbers of the Fibonacci series, instead of printing it:
+			</p>
+			<pre>
+				<code>
+					<p class="code-text">>>> def fib2(n):  # return Fibonacci series up to n
+...     """Return a list containing the Fibonacci series up to n."""
+...     result = []
+...     a, b = 0, 1
+...     while a < n:
+...         result.append(a)    # see below
+...         a, b = b, a+b
+...     return result
+...
+>>> f100 = fib2(100)    # call it
+>>> f100                # write the result
+[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]</p>
+				</code>
+			</pre>
+			<p>
+				This example, as usual, demonstrates some new Python features:
+			</p>
+				<ul>
+					<li>The return statement returns with a value from a function. return without an expression argument returns None. Falling off the end of a function also returns None</li>
+					<li>The statement result.append(a) calls a method of the list object result. A method is a function that ‘belongs’ to an object and is named obj.methodname, where obj is some object (this may be an expression), and methodname is the name of a method that is defined by the object’s type. Different types define different methods. Methods of different types may have the same name without causing ambiguity. (It is possible to define your own object types and methods, using classes, see Classes) The method append() shown in the example is defined for list objects; it adds a new element at the end of the list. In this example it is equivalent to result = result + [a], but more efficient.</li>
+				</ul>
+		</section>
+		<section id="intermezzo:_coding_style" class="main-section">
+			<header><h1>Intermezzo: Coding Style</h1></header>
+			<p>
+				Now that you are about to write longer, more complex pieces of Python, it is a good time to talk about coding style. Most languages can be written (or more concise, formatted) in different styles; some are more readable than others. Making it easy for others to read your code is always a good idea, and adopting a nice coding style helps tremendously for that.</p>
+
+			<p>For Python, PEP 8 has emerged as the style guide that most projects adhere to; it promotes a very readable and eye-pleasing coding style. Every Python developer should read it at some point; here are the most important points extracted for you:
+			</p>
+			<ul>
+				<li>Use 4-space indentation, and no tabs.</li>
+				<li>4 spaces are a good compromise between small indentation (allows greater nesting depth) and large indentation (easier to read). Tabs introduce confusion, and are best left out.</li>
+				<li>Wrap lines so that they don’t exceed 79 characters.
+					(This helps users with small displays and makes it possible to have several code files side-by-side on larger displays).
+				</li>
+				<li>Use blank lines to separate functions and classes, and larger blocks of code inside functions.</li>
+				<li>When possible, put comments on a line of their own.</li>
+				<li>Use docstrings.</li>
+				<li>Use spaces around operators and after commas, but not directly inside bracketing constructs:<code>a = f(1, 2) + g(3, 4)</code>.</li>
+				<li>Name your classes and functions consistently; the convention is to use CamelCase for classes and lower_case_with_underscores for functions and methods. Always use self as the name for the first method argument (see A First Look at Classes for more on classes and methods)</li>
+				<li>Don’t use fancy encodings if your code is meant to be used in international environments. Python’s default, UTF-8, or even plain ASCII work best in any case</li>
+				<li>Likewise, don’t use non-ASCII characters in identifiers if there is only the slightest chance people speaking a different language will read or maintain the code.</li>
+			</ul>
+		</section>
+		<section id="reference" class="main-section">
+			<header><h1>Reference</h1></header>
+			<p>All the documentation in this page is taken from the official <a href="https://docs.python.org/3.7/contents.html">Python Documentation</a></p>
+		</section>
+	</main>
+
+	<script type="text/javascript" src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+</body>
+</html>
